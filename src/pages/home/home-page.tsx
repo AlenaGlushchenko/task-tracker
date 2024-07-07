@@ -19,7 +19,7 @@ import {
 } from "../../components/task/task-slice";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
-import {Button, ButtonProps, Tooltip, useTheme} from "@mui/material";
+import {Button, Tooltip, useTheme} from "@mui/material";
 import {TodoList} from "../../features/list/todo-list";
 
 const BUTTON_ACTION = ['all', "active", "completed"];
@@ -76,7 +76,7 @@ export const HomePage = () => {
                 dispatch(deleteTask(task.id));
             });
         }
-    }, [completedTasks]);
+    }, [dispatch, completedTasks]);
 
     return (
         <Card sx={{width: "100%", maxWidth: "35rem"}}>
