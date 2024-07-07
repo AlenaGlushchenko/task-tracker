@@ -1,11 +1,10 @@
 import React, {ReactNode} from 'react';
 import {ThemeProvider as MUIThemeProvider} from "@mui/material/styles";
 import {selectTheme} from "./theme-provider-slice";
-import {useAppDispatch, useAppSelector} from "../../app/hooks";
+import {useAppSelector} from "../../app/hooks";
 import {Pallete} from "../theme";
 
 export const ThemeProvider = ({ children }: {children: ReactNode}) => {
-    const dispatch = useAppDispatch();
     const mode = useAppSelector(selectTheme);
 
     // useEffect(() => {
